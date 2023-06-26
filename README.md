@@ -381,11 +381,9 @@ maintenance and allows for more easy customization.
 ### Stage specification
 
 If you wish to build up to a specified stage (such as building up to stage 3
-for a lite system in our case), place an empty file named `SKIP` in each of the `./stage`
-directories you wish not to include.
-
-Then add an empty file named `SKIP_IMAGES` to `./stage4` and `./stage5` (if building up to stage 2) or
-to `./stage2` (if building a minimal system).
+for a lite system in our case), write the stages you want the script to go through in the `config` file.
+In the case of CIRCLean:
+   STAGE_LIST="stage0 stage1 stage2 stage3"
 
 ```bash
 # Example for building a lite system
