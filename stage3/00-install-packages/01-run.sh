@@ -1,7 +1,7 @@
 #!/bin/bash -e
 
 install -m 644 files/rc-local.service "${ROOTFS_DIR}/etc/systemd/system/"
-install -m 644 files/rc.local "${ROOTFS_DIR}/etc/
+install -m 644 files/rc.local "${ROOTFS_DIR}/etc/"
 
 on_chroot << EOF
 
