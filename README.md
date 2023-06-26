@@ -376,10 +376,12 @@ maintenance and allows for more easy customization.
    tools installed.
    CIRCLean dependencies and requirements are also installed in this stage.
 
+- **Stage 4** and **Stage 5** are skipped.
+
 ### Stage specification
 
-If you wish to build up to a specified stage (such as building up to stage 2
-for a lite system), place an empty file named `SKIP` in each of the `./stage`
+If you wish to build up to a specified stage (such as building up to stage 3
+for a lite system in our case), place an empty file named `SKIP` in each of the `./stage`
 directories you wish not to include.
 
 Then add an empty file named `SKIP_IMAGES` to `./stage4` and `./stage5` (if building up to stage 2) or
