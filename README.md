@@ -382,16 +382,9 @@ maintenance and allows for more easy customization.
 
 If you wish to build up to a specified stage (such as building up to stage 3
 for a lite system in our case), write the stages you want the script to go through in the `config` file.
+
 In the case of CIRCLean:
    STAGE_LIST="stage0 stage1 stage2 stage3"
-
-```bash
-# Example for building a lite system
-echo "IMG_NAME='Raspbian'" > config
-touch ./stage3/SKIP ./stage4/SKIP ./stage5/SKIP
-touch ./stage4/SKIP_IMAGES ./stage5/SKIP_IMAGES
-sudo ./build.sh  # or ./build-docker.sh
-```
 
 If you wish to build further configurations upon (for example) the lite
 system, you can also delete the contents of `./stage3` and `./stage4` and
