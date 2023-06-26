@@ -1,0 +1,35 @@
+#!/bin/sh -e
+#
+# rc.local
+#
+# This script is executed at the end of each multiuser runlevel.
+# Make sure that the script will "exit 0" on success or any other
+# value on error.
+#
+# In order to enable or disable this script just change the execution
+# bits.
+#
+# By default this script does nothing.
+#
+## The above are the default comments for rc.local. For Circlean, rc.local has
+## been modified to start the grooming process after booting.
+
+clean(){
+    echo "GROOMER: Copy over, sleeping 15s before shutdown."
+    sleep 15
+    echo "GROOMER: rc.local done, shutting down."
+    /sbin/shutdown -P -h now
+}
+
+echo "GROOMER: end of boot, running rc.local."
+
+if [ -e /dev/sda ]; then
+  if [ -e /dev/sdb ]; then
+    trap clean EXIT TERM INT
+    cd /opt/groomer
+    /usr/sbin/led &
+    ./init.sh
+  fi
+fi
+
+exit 0
