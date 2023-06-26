@@ -30,9 +30,6 @@ can do so with:
 git clone https://github.com/CIRCL/circlean-pi-gen.git
 ```
 
-`--depth 1` can be added afer `git clone` to create a shallow clone, only containing
-the latest revision of the repository. Do not do this on your development machine.
-
 Also, be careful to clone the repository to a base path **NOT** containing spaces.
 This configuration is not supported by debootstrap and will lead to `pi-gen` not
 running.
