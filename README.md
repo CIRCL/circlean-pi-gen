@@ -2,6 +2,7 @@
 
 Tool used to create Raspberry Pi OS (Previously known as Raspbian) images for CIRCLean usage. 
 
+![CIRCLean logo](https://camo.githubusercontent.com/0a55e3fb614b2adc105b995f86c00175f8c6765fa8c459f4328b6caebeea1a6b/68747470733a2f2f7777772e636972636c2e6c752f6173736574732f696d616765732f6c6f676f732f636972636c65616e2e706e67)
 
 ## Dependencies
 
