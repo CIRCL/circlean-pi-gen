@@ -1,8 +1,7 @@
-IMG_NAME="CIRCLean-Test"
+IMG_NAME="CIRCLean"
 RELEASE="bullseye"
 LOCALE_DEFAULT="en_US.UTF-8"
 TARGET_HOSTNAME="CIRCLean"
 KEYBOARD_KEYMAP="fr"
 TIMEZONE_DEFAULT="Europe/Paris"
 STAGE_LIST="stage0 stage1 stage2 stage3"
-#
