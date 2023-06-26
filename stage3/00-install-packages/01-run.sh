@@ -31,7 +31,6 @@ PYCIRCL_DIR=/home/pi/PyCIRCLean/
 
 if [ ! -d /home/pi/PyCIRCLean/ ]; then
     git clone https://github.com/CIRCL/PyCIRCLean.git
-    echo "Cloning into PyCIRCLean"
 
 fi
 
