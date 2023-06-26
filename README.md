@@ -1,6 +1,6 @@
-# pi-gen
+# CIRCLean pi-gen
 
-Tool used to create Raspberry Pi OS images. (Previously known as Raspbian).
+Tool used to create Raspberry Pi OS (Previously known as Raspbian) images for CIRCLean usage. 
 
 
 ## Dependencies
