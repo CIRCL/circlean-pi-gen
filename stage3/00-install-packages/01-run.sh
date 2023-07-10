@@ -28,24 +28,46 @@ sudo dpkg -i p7zip-rar_16.02-3_armhf.deb
 
 # Clone PyCIRCLean repository
 cd /home/pi
-PYCIRCL_DIR=/home/pi/PyCIRCLean/
+rm -rf PyCIRCLean
+git clone https://github.com/CIRCL/PyCIRCLean.git
+echo "Cloning into PyCIRCLean"
 
-if [ ! -d /home/pi/PyCIRCLean/ ]; then
-    git clone https://github.com/CIRCL/PyCIRCLean.git
-
-fi
-
-apt install libreoffice
-
+echo "Installing Libreoffice"
+yes | apt install libreoffice
 cd PyCIRCLean/
+
 
 echo "Installing Rust"
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 source ~/.bashrc
 source "$HOME/.cargo/env"
 
-echo "Installing Poetry"
-curl -sSL https://install.python-poetry.org | python3 -
+
+echo "checking the versions of pip and setuptools/upgrading them"
+pip install --upgrade setuptools
+pip install --upgrade pip
+
+
+
+
+#echo "Installing Poetry"
+#curl -sSL https://install.python-poetry.org > foo.py
+#python3 foo.py
+echo "Installing Poetry with pip"
+cryptography==3.1.1
+pip install poetry
+
+echo "step 1"
+echo $VENV_DIR
+echo "ENV: $ENV_DIR"
+python3 -m venv $VENV_PATH
+echo "step 2"
+$VENV_PATH/bin/pip install -U pip setuptools
+echo "step 3"
+$VENV_PATH/bin/pip install poetry
+echo "done"
+
+poetry install
 
 # Additional setup steps specific to CIRCLean
 useradd -m kitten
@@ -61,5 +83,6 @@ systemctl disable dhcpcd.service
 apt-get clean
 apt-get autoremove -y
 apt-get autoclean -y
+
 
 EOF
