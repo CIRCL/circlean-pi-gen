@@ -51,8 +51,6 @@ pip install --upgrade pip
 
 
 #echo "Installing Poetry"
-#curl -sSL https://install.python-poetry.org > foo.py
-#python3 foo.py
 echo "Installing Poetry with pip"
 cryptography==3.1.1
 pip install poetry
