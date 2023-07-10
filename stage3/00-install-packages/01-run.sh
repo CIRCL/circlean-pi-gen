@@ -48,9 +48,6 @@ pip install --upgrade setuptools
 pip install --upgrade pip
 
 
-
-
-#echo "Installing Poetry"
 echo "Installing Poetry with pip"
 cryptography==3.1.1
 pip install poetry
