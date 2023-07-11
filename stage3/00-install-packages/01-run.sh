@@ -49,18 +49,8 @@ pip install --upgrade pip
 
 
 echo "Installing Poetry with pip"
-cryptography==3.1.1
+pip install cryptography==3.1.1
 pip install poetry
-
-echo "step 1"
-echo $VENV_DIR
-echo "ENV: $ENV_DIR"
-python3 -m venv $VENV_PATH
-echo "step 2"
-$VENV_PATH/bin/pip install -U pip setuptools
-echo "step 3"
-$VENV_PATH/bin/pip install poetry
-echo "done"
 
 poetry install
 
