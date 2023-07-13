@@ -28,7 +28,6 @@ sudo dpkg -i p7zip-rar_16.02-3_armhf.deb
 
 # Clone PyCIRCLean repository
 cd /home/pi
-rm -rf PyCIRCLean
 git clone https://github.com/CIRCL/PyCIRCLean.git
 echo "Cloning into PyCIRCLean"
 
@@ -43,14 +42,26 @@ source ~/.bashrc
 source "$HOME/.cargo/env"
 
 
-echo "checking the versions of pip and setuptools/upgrading them"
-pip install --upgrade setuptools
+echo "Installing/checking the versions of pip and setuptools"
+pip install setuptools
 pip install --upgrade pip
+
+echo "Installing cryptography"
+pip install cryptography==40.0.2
 
 
 echo "Installing Poetry with pip"
-pip install cryptography==3.1.1
 pip install poetry
+
+#echo "step 1"
+#echo $VENV_DIR
+#echo "ENV: $ENV_DIR"
+#python3 -m venv $VENV_PATH
+#echo "step 2"
+#$VENV_PATH/bin/pip install -U pip setuptools
+#echo "step 3"
+#$VENV_PATH/bin/pip install poetry
+#echo "done"
 
 poetry install
 
